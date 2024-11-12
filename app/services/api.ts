@@ -10,11 +10,13 @@ import {
 import {DataDoramas, DataEpisodes, DataSearch} from "~/types/doram";
 import {DetailEpisodeType, LinksOnline} from "~/types/episode";
 import {GenreType} from "~/types/genre";
-
+const metaenv = import.meta.env;
 class ApiClient {
   private url_client: string;
   constructor() {
-    this.url_client = "http://localhost:9011/";
+    this.url_client = metaenv.DEV
+      ? "http://localhost:9011/"
+      : import.meta.env.VITE_API_URL;
   }
   private async ResquestData(path: string) {
     try {
