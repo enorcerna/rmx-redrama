@@ -13,6 +13,7 @@ export default defineConfig({
   plugins: [
     deno(),
     remix({
+      serverModuleFormat: "esm",
       ssr: false,
       future: {
         v3_fetcherPersist: true,
