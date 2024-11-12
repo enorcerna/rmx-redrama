@@ -1,5 +1,4 @@
 import {vitePlugin as remix} from "@remix-run/dev";
-import deno from "@deno/vite-plugin";
 import {defineConfig} from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -11,7 +10,6 @@ declare module "@remix-run/node" {
 
 export default defineConfig({
   plugins: [
-    deno(),
     remix({
       serverModuleFormat: "esm",
       ssr: false,
