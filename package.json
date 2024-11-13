@@ -8,6 +8,8 @@
     "dev": "remix vite:dev --port 9311",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "preview": "vite preview",
+    "serve": "vite serve",
+    "start": "deno run -A ./dist/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -26,7 +28,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.3.1",
-    "isbot": "^4",
+    "isbot": "^5.1.17",
     "lucide-react": "^0.456.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
