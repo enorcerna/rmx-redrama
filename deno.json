@@ -4,6 +4,26 @@
     "build": "deno run -A --node-modules-dir npm:vite build",
     "preview": "deno run -A --node-modules-dir npm:vite preview",
     "server": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/",
-    "serve": "deno run -A --node-modules-dir npm:vite preview"
+    "serve": "deno run -A --node-modules-dir npm:vite serve"
+  },
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "types": [
+      "@remix-run/node",
+      "vite/client"
+    ],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true
   }
 }
