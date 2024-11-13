@@ -12,6 +12,8 @@ export default defineConfig({
   plugins: [
     remix({
       serverModuleFormat: "esm",
+      buildDirectory: "./dist",
+      appDirectory: "./app",
       ssr: false,
       future: {
         v3_fetcherPersist: true,
