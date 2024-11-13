@@ -9,7 +9,7 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "preview": "vite preview",
     "serve": "vite serve",
-    "start": "deno task serve",
+    "start": "vite serve",
     "typecheck": "tsc"
   },
   "dependencies": {
