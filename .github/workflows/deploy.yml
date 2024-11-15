@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "enorcerna-rmx-redrama-11"
-          entrypoint: "index.js"
+          entrypoint: "server/index.js"
           root: "build"
           
           
