@@ -1,6 +1,16 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@std/cli@^1.0.6": "1.0.6",
+    "jsr:@std/encoding@^1.0.5": "1.0.5",
+    "jsr:@std/fmt@^1.0.3": "1.0.3",
+    "jsr:@std/http@^1.0.8": "1.0.9",
+    "jsr:@std/media-types@^1.0.3": "1.0.3",
+    "jsr:@std/net@^1.0.4": "1.0.4",
+    "jsr:@std/path@^1.0.6": "1.0.7",
+    "jsr:@std/path@^1.0.7": "1.0.7",
+    "jsr:@std/streams@^1.0.7": "1.0.7",
+    "jsr:@std/text@^1.0.7": "1.0.8",
     "npm:@deno/vite-plugin@1": "1.0.0_vite@5.4.11",
     "npm:@radix-ui/react-avatar@^1.1.1": "1.1.1_@types+react@18.3.12_@types+react-dom@18.3.1_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@radix-ui/react-collapsible@^1.1.1": "1.1.1_@types+react@18.3.12_@types+react-dom@18.3.1_react@18.3.1_react-dom@18.3.1__react@18.3.1",
@@ -14,6 +24,7 @@
     "npm:@remix-run/dev@^2.14.0": "2.14.0_@remix-run+react@2.14.0__react@18.3.1__react-dom@18.3.1___react@18.3.1__typescript@5.6.3_typescript@5.6.3_vite@5.4.11_@babel+core@7.26.0_react@18.3.1_react-dom@18.3.1__react@18.3.1_esbuild@0.17.6_postcss@8.4.49",
     "npm:@remix-run/node@^2.14.0": "2.14.0_typescript@5.6.3",
     "npm:@remix-run/react@^2.14.0": "2.14.0_react@18.3.1_react-dom@18.3.1__react@18.3.1_typescript@5.6.3",
+    "npm:@remix-run/server-runtime@2.14.0": "2.14.0_typescript@5.6.3",
     "npm:@types/react-dom@^18.3.1": "18.3.1",
     "npm:@types/react@^18.3.12": "18.3.12",
     "npm:@typescript-eslint/eslint-plugin@^8.14.0": "8.14.0_@typescript-eslint+parser@8.14.0__eslint@9.14.0__typescript@5.6.3_eslint@9.14.0_typescript@5.6.3",
@@ -30,6 +41,7 @@
     "npm:eslint@^9.14.0": "9.14.0",
     "npm:isbot@^5.1.17": "5.1.17",
     "npm:lucide-react@0.456": "0.456.0_react@18.3.1",
+    "npm:mime@3": "3.0.0",
     "npm:postcss@^8.4.49": "8.4.49",
     "npm:react-dom@^18.3.1": "18.3.1_react@18.3.1",
     "npm:react@^18.3.1": "18.3.1",
@@ -40,6 +52,44 @@
     "npm:vite-tsconfig-paths@^5.1.2": "5.1.2_vite@5.4.11_typescript@5.6.3",
     "npm:vite@*": "5.4.11",
     "npm:vite@^5.4.11": "5.4.11"
+  },
+  "jsr": {
+    "@std/cli@1.0.6": {
+      "integrity": "d22d8b38c66c666d7ad1f2a66c5b122da1704f985d3c47f01129f05abb6c5d3d"
+    },
+    "@std/encoding@1.0.5": {
+      "integrity": "ecf363d4fc25bd85bd915ff6733a7e79b67e0e7806334af15f4645c569fefc04"
+    },
+    "@std/fmt@1.0.3": {
+      "integrity": "97765c16aa32245ff4e2204ecf7d8562496a3cb8592340a80e7e554e0bb9149f"
+    },
+    "@std/http@1.0.9": {
+      "integrity": "d409fc319a5e8d4a154e576c758752e9700282d74f31357a12fec6420f9ecb6c",
+      "dependencies": [
+        "jsr:@std/cli",
+        "jsr:@std/encoding",
+        "jsr:@std/fmt",
+        "jsr:@std/media-types",
+        "jsr:@std/net",
+        "jsr:@std/path@^1.0.7",
+        "jsr:@std/streams"
+      ]
+    },
+    "@std/media-types@1.0.3": {
+      "integrity": "b12d30a7852f7578f4d210622df713bbfd1cbdd9b4ec2eaf5c1845ab70bab159"
+    },
+    "@std/net@1.0.4": {
+      "integrity": "2f403b455ebbccf83d8a027d29c5a9e3a2452fea39bb2da7f2c04af09c8bc852"
+    },
+    "@std/path@1.0.7": {
+      "integrity": "76a689e07f0e15dcc6002ec39d0866797e7156629212b28f27179b8a5c3b33a1"
+    },
+    "@std/streams@1.0.7": {
+      "integrity": "1a93917ca0c58c01b2bfb93647189229b1702677f169b6fb61ad6241cd2e499b"
+    },
+    "@std/text@1.0.8": {
+      "integrity": "40ba34caa095f393e78796e5eda37b8b4e2cc6cfd6f51f34658ad7487b1451e4"
+    }
   },
   "npm": {
     "@alloc/quick-lru@5.2.0": {
@@ -5362,6 +5412,11 @@
     }
   },
   "workspace": {
+    "dependencies": [
+      "jsr:@std/http@^1.0.8",
+      "jsr:@std/path@^1.0.6",
+      "jsr:@std/text@^1.0.7"
+    ],
     "packageJson": {
       "dependencies": [
         "npm:@deno/vite-plugin@1",
@@ -5377,6 +5432,7 @@
         "npm:@remix-run/dev@^2.14.0",
         "npm:@remix-run/node@^2.14.0",
         "npm:@remix-run/react@^2.14.0",
+        "npm:@remix-run/server-runtime@2.14.0",
         "npm:@types/react-dom@^18.3.1",
         "npm:@types/react@^18.3.12",
         "npm:@typescript-eslint/eslint-plugin@^8.14.0",
@@ -5393,6 +5449,7 @@
         "npm:eslint@^9.14.0",
         "npm:isbot@^5.1.17",
         "npm:lucide-react@0.456",
+        "npm:mime@3",
         "npm:postcss@^8.4.49",
         "npm:react-dom@^18.3.1",
         "npm:react@^18.3.1",
