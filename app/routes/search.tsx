@@ -1,4 +1,4 @@
-import {LoaderFunctionArgs} from "@remix-run/node";
+import {LoaderFunctionArgs} from "@remix-run/deno";
 import {MetaFunction, useLoaderData} from "@remix-run/react";
 import PosterCard from "~/components/pages/PosterCard";
 import {CONFIG} from "~/constants/main";

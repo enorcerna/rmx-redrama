@@ -1,4 +1,4 @@
-import {LoaderFunctionArgs} from "@remix-run/node";
+import {LoaderFunctionArgs} from "@remix-run/deno";
 import {MetaFunction, useLoaderData} from "@remix-run/react";
 import ControlEpisode from "~/components/pages/ControlEpisode";
 import Video from "~/components/pages/Video";

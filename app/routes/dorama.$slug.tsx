@@ -1,4 +1,4 @@
-import {LoaderFunctionArgs} from "@remix-run/node";
+import {LoaderFunctionArgs} from "@remix-run/deno";
 import {Link, MetaFunction, useLoaderData} from "@remix-run/react";
 import {Play} from "lucide-react";
 import HeroDorama from "~/components/pages/dorama/HeroDorama";

@@ -1,4 +1,4 @@
-import type {MetaFunction} from "@remix-run/node";
+import type {MetaFunction} from "@remix-run/deno";
 import {useLoaderData} from "@remix-run/react";
 import H2 from "~/components/pages/H2";
 import ListPosters from "~/components/pages/ListPosters";
