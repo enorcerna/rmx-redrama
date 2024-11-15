@@ -1,29 +1,43 @@
 {
   "tasks": {
-    "dev": "deno run -A --node-modules-dir npm:vite",
-    "build": "deno run -A --node-modules-dir npm:vite build",
-    "preview": "deno run -A --node-modules-dir npm:vite preview",
-    "server": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/",
-    "serve": "deno run -A --node-modules-dir npm:vite serve"
+    "build": "deno run -A npm:@remix-run/dev vite:build",
+    "deploy": "deployctl deploy --include=deno.json,deno.lock,build,package.json,server --project=rx-redrama-app ./server.ts",
+    "dev": "deno run -A npm:@remix-run/dev vite:dev",
+    "format": "deno fmt",
+    "lint": "deno lint && deno run -A npm:eslint .",
+    "start": "deno serve -A --parallel ./server.ts",
+    "typegen": "deno types > ./app/deno.d.ts"
   },
-  "compilerOptions": {
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2022"
+  "imports": {
+    "@std/http": "jsr:@std/http@^1.0.8",
+    "@std/path": "jsr:@std/path@^1.0.6",
+    "@std/text": "jsr:@std/text@^1.0.7",
+    "~/": "./app/"
+  },
+  "exclude": [
+    "app/",
+    "build/"
+  ],
+  "fmt": {
+    "exclude": [
+      "!app/"
+    ]
+  },
+  "nodeModulesDir": "manual",
+  "deploy": {
+    "project": "946fc1f1-0d2f-49f9-a0bc-a33a601c2a87",
+    "exclude": [
+      "**/node_modules",
+      "**/node_modules",
+      "**/node_modules"
     ],
-    "types": [
-      "@remix-run/node",
-      "vite/client"
+    "include": [
+      "deno.json",
+      "deno.lock",
+      "build",
+      "package.json",
+      "server"
     ],
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "resolveJsonModule": true,
-    "target": "ES2022",
-    "strict": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+    "entrypoint": "server.ts"
   }
 }
