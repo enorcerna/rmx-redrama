@@ -1,20 +1,15 @@
 import {vitePlugin as remix} from "@remix-run/dev";
 import {defineConfig} from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-
-declare module "@remix-run/node" {
-  interface Future {
-    v3_singleFetch: true;
-  }
-}
+import deno from "@deno/vite-plugin";
+import {fileURLToPath} from "node:url";
 
 export default defineConfig({
   plugins: [
+    deno(),
     remix({
-      serverModuleFormat: "esm",
-      buildDirectory: "./dist",
-      appDirectory: "./app",
-      ssr: false,
+      // serverModuleFormat: "esm",
+      // ssr: false,
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
@@ -24,5 +19,6 @@ export default defineConfig({
       }
     }),
     tsconfigPaths()
-  ]
+  ],
+  resolve: {alias: {"~/": fileURLToPath(import.meta.resolve("./app/"))}}
 });
