@@ -37,8 +37,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "enorcerna-rmx-redrama-11"
-          entrypoint: "server/index.js"
+          project: "enorcerna-rmx-redrama-96"
+          entrypoint: "server.ts"
           root: "build"
           
           
