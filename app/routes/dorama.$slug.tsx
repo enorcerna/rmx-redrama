@@ -15,13 +15,13 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {CONFIG} from "~/constants/main";
 import {Client} from "~/services/api";
 
-export const clientLoader = async ({params}: LoaderFunctionArgs) => {
+export const loader = async ({params}: LoaderFunctionArgs) => {
   const drama = await Client.getDramaBySlug(params.slug as string);
   const episodes = await Client.getDramaEpisodesById(drama._id);
   const similar = await Client.getDramasSimilarById(drama._id);
   return {drama, episodes, similar};
 };
-export const meta: MetaFunction<typeof clientLoader> = ({data}) => {
+export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `${data?.drama.name_es} | ${CONFIG.Name}`}];
 };
 function DoramaSlug() {

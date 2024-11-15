@@ -5,13 +5,13 @@ import Video from "~/components/pages/Video";
 import {CONFIG} from "~/constants/main";
 import {Client} from "~/services/api";
 
-export const clientLoader = async ({params}: LoaderFunctionArgs) => {
+export const loader = async ({params}: LoaderFunctionArgs) => {
   const cap = await Client.getEpisodeBySlug(params.slug as string);
   const next = await Client.getEpisodeNextById(cap._id);
   const prev = await Client.getEpisodePrevById(cap._id);
   return {cap, next, prev};
 };
-export const meta: MetaFunction<typeof clientLoader> = ({data}) => {
+export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `${data?.cap.name_es} | ${CONFIG.Name}`}];
 };
 function CapituloSlug() {

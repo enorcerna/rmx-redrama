@@ -5,7 +5,7 @@ import ListPosters from "~/components/pages/ListPosters";
 import {CONFIG} from "~/constants/main";
 import {Client} from "~/services/api";
 
-export const clientLoader = async ({params, request}: LoaderFunctionArgs) => {
+export const loader = async ({params, request}: LoaderFunctionArgs) => {
   const gre = await Client.getGenreBySlug(params.slug as string);
   const url = new URL(request.url);
   const page = url.searchParams.get("page");
@@ -15,7 +15,7 @@ export const clientLoader = async ({params, request}: LoaderFunctionArgs) => {
   );
   return {gre, pagination};
 };
-export const meta: MetaFunction<typeof clientLoader> = ({data}) => {
+export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `${data?.gre.name} | ${CONFIG.Name}`}];
 };
 function GenreSlug() {

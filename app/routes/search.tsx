@@ -8,13 +8,13 @@ export const meta: MetaFunction = ({location}) => {
   return [{title: `Resultados para "${searchQuery}" | ${CONFIG.Name}`}];
 };
 
-export const clientLoader = async ({request}: LoaderFunctionArgs) => {
+export const loader = async ({request}: LoaderFunctionArgs) => {
   const {searchParams} = new URL(request.url);
   const q = searchParams.get("q") as string;
   return await Client.getSearch(q);
 };
 function Search() {
-  const {searchDorama, searchMovie} = useLoaderData<typeof clientLoader>();
+  const {searchDorama, searchMovie} = useLoaderData<typeof loader>();
   return (
     <div className="p-3 flex flex-col gap-3">
       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-4">
