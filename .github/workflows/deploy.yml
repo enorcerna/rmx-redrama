@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "enorcerna-rmx-redrama-96"
-          entrypoint: "vite:start"
+          entrypoint: "npm:vite:serve"
           root: "build"
           
           
